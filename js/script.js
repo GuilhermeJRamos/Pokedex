@@ -24,7 +24,8 @@ const renderPokemon = async (pokemon) => {
   pokemonName.innerHTML = "Loading...";
   pokemonNumber.innerHTML = "";
 
-  const data = await fetchPokemon(pokemon);
+  const pokemonId = parseInt(pokemon, 10); // Remover zeros à esquerda
+  const data = await fetchPokemon(pokemonId);
 
   if (data) {
     pokemonImage.style.display = "block";
